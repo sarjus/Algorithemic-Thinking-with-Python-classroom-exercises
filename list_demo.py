@@ -4,6 +4,8 @@ Instructions:
 Create a list called fruits with the following elements: "apple", "banana", "cherry", "date".
 Print the second element in the list.
 Modify the last element of the list to "dragonfruit".Print the modified list
+
+Author: Sarju S
 '''
 # Step 1: Creating the list
 fruits = ["apple", "banana", "cherry", "date"]
