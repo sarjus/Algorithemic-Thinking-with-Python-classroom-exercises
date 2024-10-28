@@ -15,7 +15,7 @@ Calculate and display the total stock value for each item.
 Find and print the item with the highest total stock value.
 Author: Sarju S
 '''
-# Inventory data with tuples (item_name, quantity, unit_price)
+# Inventory data as tuples (item_name, quantity, unit_price)
 inventory = [
     ("Laptop", 5, 1200.00),
     ("Headphones", 15, 100.00),
@@ -24,18 +24,20 @@ inventory = [
     ("Monitor", 10, 300.00)
 ]
 
-# Calculate and display the total stock value for each item
-def calculate_total_value(item):
-    name, quantity, price = item
-    return quantity * price
-
 print("Total stock values:")
+highest_value = 0
+highest_value_item = None
+
 for item in inventory:
-    name = item[0]
-    total_value = calculate_total_value(item)
+    name, price, quantity = item
+    
+    total_value = quantity * price
     print(f"{name}: ${total_value:.2f}")
 
-# Find the item with the highest total stock value
-max_value_item = max(inventory, key=calculate_total_value)
+    # Track the item with the highest total value
+    if total_value > highest_value:
+        highest_value = total_value
+        highest_value_item = item
+
 print("\nItem with the highest stock value:")
-print(f"{max_value_item[0]} - Total Value: ${calculate_total_value(max_value_item):.2f}")
+print(f"{highest_value_item[0]} - Total Value: ${highest_value:.2f}")
